@@ -204,7 +204,7 @@ class FreshnessEngine:
         Map a freshness score to one of the three automated actions.
 
         Action 1 – sell at full price  (score >= full_price threshold)
-        Action 2 – apply AI discount   (discount threshold <= score < full_price)
+        Action 2 – apply AI discount   (score >= foodbank threshold but < full_price threshold)
         Action 3 – alert food bank     (score < foodbank threshold)
 
         Parameters

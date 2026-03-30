@@ -98,14 +98,15 @@ class PricingModel:
 
     The baseline algorithm uses a linear function:
 
-        discount_pct = base_rate
-                     + score_slope  * (threshold - score)
-                     + time_slope   * (1 / max(1, hours_to_expiry))
+        discount_pct = b0
+                     + b1 * freshness_score
+                     + b2 * (1 / max(1, hours_to_expiry))
 
-    Coefficients are estimated per category from historical ``SalesRecord``
-    data via ordinary-least-squares (manual, dependency-free implementation).
-    If fewer than three records exist for a category the model falls back to a
-    simple heuristic.
+    where lower freshness scores and less time to expiry both drive higher
+    discounts.  Coefficients are estimated per category from historical
+    ``SalesRecord`` data via ordinary-least-squares (manual, dependency-free
+    implementation).  If fewer than three records exist for a category the
+    model falls back to a simple heuristic.
     """
 
     def __init__(

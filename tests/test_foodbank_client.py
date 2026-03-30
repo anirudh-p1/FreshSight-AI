@@ -179,8 +179,6 @@ class TestApiKeyAuth:
     def test_auth_header_set_when_api_key_provided(self):
         session = _mock_session(200)
         client = FoodBankClient(api_key="secret-key-123", session=session)
-        assert "Authorization" in client._session.headers or True
-        # Verify header was set on session
         session.headers.update.assert_called_once_with(
             {"Authorization": "Bearer secret-key-123"}
         )
