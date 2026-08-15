@@ -12,7 +12,7 @@ is to the end of its shelf life. The three automated actions are:
 to registered food bank partners via an API, who can arrange collection within a time
 window. The system integrates with the electronic barcodes for different products.
 
-# 2 – Hardware and Components
+## 2 – Hardware and Components
 FreshSight AI uses small, low power RGB cameras mounted above each shelf section. Each
 camera captures continuous images of the produce below. Computing units housed in
 compact processors mounted behind the shelving, run the CNN inference locally, which
@@ -21,7 +21,7 @@ optionally to a cloud dashboard, which is accessible to store managers, and food
 are partnered with the store. The hardware uses low-energy components, so it can be run all
 the time.
 
-# 3 – The Machine Learning Model
+## 3 – The Machine Learning Model
 The core part of FreshSight AI is a CNN trained on a large dataset of produce images that
 are labelled by freshness stage (fresh, moderate, near expiry, and spoiled). CNNs are a type
 of deep learning model that are used in image recognition as they learn visual features such
@@ -33,7 +33,7 @@ The model gives a freshness score for each item, from 0 to 100. The thresholds a
 for each produce category. For example, strawberries trigger at 70, whilst root vegetables
 trigger at 50. These thresholds do vary over time, as they are trained using more feedback.
 
-# 4 – Dynamic Pricing and Food Bank Integration
+## 4 – Dynamic Pricing and Food Bank Integration
 When the CNN gives a freshness score below a threshold, FreshSight AI automatically
 updates the electronic shelf label for that item with an optimised discount price. The discount
 is calculated using a secondary predictive model that estimates the minimum reduction
